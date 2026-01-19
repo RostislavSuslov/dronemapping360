@@ -3,13 +3,78 @@ import './main.scss'
 import './style.css'
 import { gsap } from "gsap";
 
-const buttonsMagnetic = document.querySelectorAll("[data-magnetic]");
+window.addEventListener('load', () => {
+  const headerHoverLine = () => {
+    const list = document.querySelector('.header__list');
+    const links = document.querySelectorAll('.header__link');
+    let activeLink = document.querySelector('.header__link--active');
 
-buttonsMagnetic.forEach(btn => {
-    const xTo = gsap.quickTo(btn, "x", { duration: 1, ease: "elastic.out(1, 0.4)" });
-    const yTo = gsap.quickTo(btn, "y", { duration: 1, ease: "elastic.out(1, 0.4)" });
+    function moveLine(target) {
+      const rect = target.getBoundingClientRect();
+      const listRect = list.getBoundingClientRect();
 
-    btn.addEventListener("mousemove", e => {
+      list.style.setProperty('--line-left', `${rect.left - listRect.left}px`);
+      list.style.setProperty('--line-width', `${rect.width}px`);
+    }
+
+    links.forEach(link => {
+      link.addEventListener('mouseenter', () => {
+        moveLine(link);
+      });
+    });
+
+    list.addEventListener('mouseleave', () => {
+      moveLine(activeLink);
+    });
+
+    moveLine(activeLink);
+  }
+
+  const burgerMenu =()=> {
+    const burger = document.querySelector('.header__burger')
+    const headerNav = document.querySelector('.header__nav')
+
+    burger.addEventListener('click', ()=> {
+      burger.classList.toggle('header__burger--active')
+      document.body.classList.toggle('body--overflow-hidden')
+      headerNav.classList.toggle('header__nav--show')
+    })
+  }
+
+  const stickyHeader = () => {
+    const header = document.querySelector('.header');
+    const headerHeight = header.offsetHeight;
+
+    let ticking = false;
+
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+
+          if (window.scrollY > 0) {
+            header.classList.add('header--scrolled');
+            document.body.style.paddingTop = `${headerHeight}px`;
+          } else {
+            header.classList.remove('header--scrolled');
+            document.body.style.paddingTop = `0`;
+          }
+
+          ticking = false;
+        });
+
+        ticking = true;
+      }
+    });
+  }
+
+  const magneticElements = () => {
+    const buttonsMagnetic = document.querySelectorAll("[data-magnetic]");
+
+    buttonsMagnetic.forEach(btn => {
+      const xTo = gsap.quickTo(btn, "x", { duration: 1, ease: "elastic.out(1, 0.4)" });
+      const yTo = gsap.quickTo(btn, "y", { duration: 1, ease: "elastic.out(1, 0.4)" });
+
+      btn.addEventListener("mousemove", e => {
         const { clientX, clientY } = e;
         const rect = btn.getBoundingClientRect();
 
@@ -18,56 +83,67 @@ buttonsMagnetic.forEach(btn => {
 
         xTo(x);
         yTo(y);
-    });
+      });
 
-    btn.addEventListener("mouseleave", () => {
+      btn.addEventListener("mouseleave", () => {
         xTo(0);
         yTo(0);
+      });
     });
-});
-
-
-const inputWrappers = document.querySelectorAll(".input-box__input-wrapper");
-
-inputWrappers.forEach(wrapper => {
-  const svg = wrapper.querySelector(".input-box__svg");
-  const path = wrapper.querySelector(".input-box__line");
-
-  let progress = 0;
-  let x = 0.5;
-  let time = Math.PI / 2;
-  let reqId = null;
-
-  const setPath = (progress) => {
-    const width = svg.clientWidth;
-    path.setAttribute("d", `M0 20 Q${width * x} ${20 + progress}, ${width} 20`);
   }
 
-  const lerp = (a, b, t) => a * (1 - t) + b * t;
+  const inputsHover = () => {
 
-  wrapper.addEventListener("mousemove", e => {
-    const rect = svg.getBoundingClientRect();
-    x = (e.clientX - rect.left) / rect.width;
-    progress = (e.clientY - rect.top - rect.height / 2) * 0.5;
-    setPath(progress);
-  });
+    const inputWrappers = document.querySelectorAll(".input-box__input-wrapper");
 
-  wrapper.addEventListener("mouseleave", () => {
-    const animateOut = () => {
-      const newProgress = progress * Math.sin(time);
-      progress = lerp(progress, 0, 0.05);
-      time += 11;
-      setPath(newProgress);
-      if (Math.abs(progress) > 0.5){
-        reqId = requestAnimationFrame(animateOut);
-      } else {
-        progress = 0;
-        time = Math.PI / 2;
-        setPath(0);
+    inputWrappers.forEach(wrapper => {
+      const svg = wrapper.querySelector(".input-box__svg");
+      const path = wrapper.querySelector(".input-box__line");
+
+      let progress = 0;
+      let x = 0.5;
+      let time = Math.PI / 2;
+      let reqId = null;
+
+      const setPath = (progress) => {
+        const width = svg.clientWidth;
+        path.setAttribute("d", `M0 20 Q${width * x} ${20 + progress}, ${width} 20`);
       }
-    }
-    animateOut();
-  });
 
-  setPath(0);
-});
+      const lerp = (a, b, t) => a * (1 - t) + b * t;
+
+      wrapper.addEventListener("mousemove", e => {
+        const rect = svg.getBoundingClientRect();
+        x = (e.clientX - rect.left) / rect.width;
+        progress = (e.clientY - rect.top - rect.height / 2) * 0.5;
+        setPath(progress);
+      });
+
+      wrapper.addEventListener("mouseleave", () => {
+        const animateOut = () => {
+          const newProgress = progress * Math.sin(time);
+          progress = lerp(progress, 0, 0.05);
+          time += 11;
+          setPath(newProgress);
+          if (Math.abs(progress) > 0.5) {
+            reqId = requestAnimationFrame(animateOut);
+          } else {
+            progress = 0;
+            time = Math.PI / 2;
+            setPath(0);
+          }
+        }
+        animateOut();
+      });
+
+      setPath(0);
+    });
+  }
+
+
+  headerHoverLine()
+  burgerMenu()
+  stickyHeader()
+  magneticElements()
+  inputsHover()
+})

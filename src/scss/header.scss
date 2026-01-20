@@ -1,0 +1,107 @@
+.header {
+  background: var(--white);
+  min-height: 90px;
+  display: flex;
+  width: 100%;
+  transition: background 0.3s ease;
+  position: static;
+  z-index: 10;
+
+  &__logo {
+    width: 140px;
+  }
+
+  &--scrolled {
+    backdrop-filter: blur(10px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: var(--tertiary);
+  }
+
+  &__container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+
+  &__nav {
+    --link-padding: 12px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &__list {
+
+    display: flex;
+    column-gap: 36px;
+    margin: 0;
+    padding: 0;
+    position: relative;
+  }
+
+  &__item {
+    padding: 0;
+    margin: 0;
+
+    &:before {
+      display: none;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    font-weight: 900;
+    font-size: 16px;
+    line-height: 120%;
+    letter-spacing: 0em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: var(--link-padding);
+    position: relative;
+
+    &:hover {
+      @extend .gradient-flow;
+    }
+  }
+
+  .header__list::after {
+    left: calc(var(--line-left) + var(--link-padding));
+    width: calc(var(--line-width) - var(--link-padding)*2);
+  }
+
+  .header__list::after {
+    content: "";
+    position: absolute;
+    height: 3px;
+    background: var(--primary);
+    transition: left 0.2s ease, width 0.3s ease;
+    bottom: 0;
+  }
+
+  &__burger {
+    --size: 35px;
+    width: var(--size);
+    height: var(--size);
+    display: none;
+    margin-left: auto;
+    margin-right: 40px;
+    cursor: pointer;
+    border: none;
+    transition: color 0.2s ease-out;
+
+    svg {
+      width: var(--size);
+      height: var(--size);
+    }
+
+    &:hover,
+    &.header__burger--active {
+      color: var(--primary);
+    }
+  }
+
+  .header__nav--show {
+    display: flex;
+  }
+}

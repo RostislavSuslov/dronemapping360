@@ -1,0 +1,48 @@
+@media only screen and (max-width: 991.98px) {
+  .container {
+    padding: 0 10px;
+  }
+
+  .btn {
+    --min-size: 37px;
+    font-size: 14px;
+    padding: 6px 9px;
+    font-size: 14px;
+  }
+
+  .header {
+    min-height: 57px;
+
+    &__logo {
+      width: 90px;
+    }
+
+
+
+    &__burger {
+      display: block;
+    }
+
+    &__nav {
+      display: none;
+      position: absolute;
+      inset: 57px 0 0 0;
+      background-color: var(--white);
+      justify-content: flex-end;
+      padding-right: calc(157px - var(--link-padding));
+    }
+
+    &__list {
+      flex-direction: column;
+      width: 157px;
+      padding-top: 60px;
+      text-align: right;
+    }
+  }
+
+  .header .header__list::after {
+    /* ! nice selector*/
+    display: none;
+  }
+
+}

@@ -60,25 +60,10 @@
             padding-right: 64px;
         }
 
-        &-arrow {
-            width: 48px;
-            height: 25px;
-            stroke-width: 4px;
-            stroke-linecap: square;
-            stroke: currentColor;
-
-            position: absolute;
-            bottom: 6px;
-            right: 0;
-
-            &-line {
-                transform: translateX(-17px);
-                transition: transform 0.4s ease;
-            }
-        }
+      
 
         &:hover {
-            .services__item-arrow-line {
+            .template-arrow__line {
                 transform: translateX(0);
             }
         }

@@ -10,45 +10,21 @@
     --typefaces: "Arial";
     --line-height: 1.2;
     --letter-spacing: 0.02em;
+
+    --section-padidng: 60px 0 100px;
+    --template-title: 92px;
 }
 
-@font-face {
-    font-family: "Arial";
-    src: url("/assets/fonts/Arial-Regular.ttf") format('truetype');
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
+@media only screen and (max-width: 991.98px) {
+    :root {
+        --section-padidng: 50px 0 90px;
+        --template-title: 48px;
+    }
 }
 
-@font-face {
-    font-family: "Arial";
-    src: url("/assets/fonts/Arial-Bold.ttf") format('truetype');
-    font-style: normal;
-    font-weight: 700;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: "Arial";
-    src: url("/assets/fonts/Arial-Black.ttf") format('truetype');
-    font-style: normal;
-    font-weight: 900;
-    font-display: swap;
-}
-
-.markup-link {
-    position: fixed;
-    bottom: 24px;
-    left: 18px;
-    background-color: var(--primary);
-    color: var(--white);
-    border-radius: 50%;
-    padding: 8px 18px;
-    text-decoration: none;
-    transition: background-color 0.3s ease-in-out, color 0.5s linear;
-}
-
-.markup-link:hover {
-    color: var(--white);
-    background-color: var(--secondary);
+@media only screen and (max-width: 768.98px) {
+    :root {
+        --section-padidng: 40px 0 80px;
+        --template-title: 36px;
+    }
 }

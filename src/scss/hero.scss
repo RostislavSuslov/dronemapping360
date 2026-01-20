@@ -1,6 +1,7 @@
-@use './global' as *;
+@use './variables' as *;
 
 .hero__image {
   aspect-ratio: 2.4;
   width: 100%;
+  object-fit: cover;
 }

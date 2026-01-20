@@ -1,0 +1,36 @@
+@font-face {
+    font-family: "Arial";
+    src: url("/assets/fonts/Arial-Regular.ttf") format('truetype');
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Arial";
+    src: url("/assets/fonts/Arial-Bold.ttf") format('truetype');
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Arial";
+    src: url("/assets/fonts/Arial-Black.ttf") format('truetype');
+    font-style: normal;
+    font-weight: 900;
+    font-display: swap;
+}
+
+.markup-link {
+    position: fixed;
+    bottom: 24px;
+    left: 18px;
+    background-color: var(--primary);
+    color: var(--white);
+    border-radius: 50%;
+    padding: 8px 18px;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out, color 0.5s linear;
+}
+

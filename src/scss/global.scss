@@ -1,3 +1,5 @@
+@use './variables' as *;
+
 /* Reset */
 *,
 *::before,
@@ -7,19 +9,7 @@
   padding: 0;
 }
 
-@mixin gradient-flow {
-  background: linear-gradient(120deg,
-      var(--secondary),
-      var(--tertiary),
-      var(--primary),
-      var(--secondary));
-  background-size: 800% 800%;
-  animation: gradient-flow 18s linear infinite;
 
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
 
 /* Base */
 body,
@@ -29,6 +19,9 @@ input {
   background-color: var(--white);
   line-height: var(--line-height);
   letter-spacing: var(--letter-spacing);
+  text-wrap: balance;
+  hyphens: auto;
+  overflow-wrap: break-word;
 }
 
 input {
@@ -163,7 +156,7 @@ h6 {
 /* Template title */
 .template-title {
   font-weight: 900;
-  font-size: 92px;
+  font-size: var(--template-title);
   text-transform: uppercase;
   @include gradient-flow;
 }
@@ -395,7 +388,17 @@ h6 {
 }
 
 /* Selection */
+:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 6px;
+}
+
 ::selection {
   color: var(--primary);
   background-color: var(--tertiary);
+}
+
+.markup-link:hover {
+    color: var(--white);
+    background-color: var(--secondary);
 }

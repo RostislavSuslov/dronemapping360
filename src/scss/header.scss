@@ -1,4 +1,4 @@
-@use './global' as *;
+@use './variables' as *;
 
 .header {
   background: var(--white);
@@ -6,7 +6,8 @@
   display: flex;
   width: 100%;
   transition: background 0.3s ease;
-  position: static;
+  position: sticky;
+  top: 0;
   z-index: 10;
 
   &__logo {
@@ -15,10 +16,13 @@
 
   &--scrolled {
     backdrop-filter: blur(10px);
-    position: fixed;
-    top: 0;
-    left: 0;
+
+
     background: var(--tertiary);
+
+    .header__burger {
+      background-color: var(--tertiary);
+    }
   }
 
   &__container {
@@ -90,7 +94,8 @@
     margin-right: 40px;
     cursor: pointer;
     border: none;
-    transition: color 0.2s ease-out;
+    transition: color 0.2s ease-out, background-color 0.3s ease;
+    background-color: var(--white);
 
     svg {
       width: var(--size);

@@ -1,0 +1,14 @@
+@mixin gradient-flow {
+  background: linear-gradient(120deg,
+      var(--secondary),
+      var(--tertiary),
+      var(--primary),
+      var(--secondary));
+  background-size: 800% 800%;
+  animation: gradient-flow 18s linear infinite;
+
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+

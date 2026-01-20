@@ -1,7 +1,50 @@
-@use './global' as *;
+@use './variables' as *;
 
 @media only screen and (max-width: 768.98px) {
+  :root {
+    --section-padidng: 40px 0 80px;
+  }
+
   .hero__image {
     aspect-ratio: 1.25;
+  }
+
+  .services {
+    padding-bottom: 157px;
+
+    &__btn {
+      top: calc(100% - 114px);
+      right: calc(50% - 53px);
+    }
+
+    &__container {
+      grid-row-gap: 40px;
+    }
+
+    &__title {
+      margin-bottom: 20px;
+    }
+
+    &__subtitle {
+      font-size: 12px;
+    }
+
+    .services__item {
+      width: 100%;
+
+      &-image {
+        height: 122px;
+        margin-bottom: 20px;
+      }
+
+      &-title {
+        font-size: 20px;
+        margin-bottom: 16px;
+      }
+
+      &-text {
+         font-size: 12px;
+      }
+    }
   }
 }

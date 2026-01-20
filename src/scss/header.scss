@@ -1,3 +1,5 @@
+@use './global' as *;
+
 .header {
   background: var(--white);
   min-height: 90px;
@@ -61,7 +63,7 @@
     position: relative;
 
     &:hover {
-      @extend .gradient-flow;
+      @include gradient-flow;
     }
   }
 

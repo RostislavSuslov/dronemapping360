@@ -1,11 +1,6 @@
-@import './scss/global';
-@import './scss/header';
-@import './scss/hero';
-
-
-@import './scss/max-width1199px';
-@import './scss/max-width991px';
-@import './scss/max-width767px';
-
-
-
+@use './scss/global' as *;
+@use './scss/header' as *;
+@use './scss/hero' as *;
+@use './scss/max-width1199px' as *;
+@use './scss/max-width991px' as *;
+@use './scss/max-width767px' as *;

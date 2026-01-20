@@ -7,6 +7,20 @@
   padding: 0;
 }
 
+@mixin gradient-flow {
+  background: linear-gradient(120deg,
+      var(--secondary),
+      var(--tertiary),
+      var(--primary),
+      var(--secondary));
+  background-size: 800% 800%;
+  animation: gradient-flow 18s linear infinite;
+
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 /* Base */
 body,
 input {
@@ -151,7 +165,7 @@ h6 {
   font-weight: 900;
   font-size: 92px;
   text-transform: uppercase;
-  @extend .gradient-flow;
+  @include gradient-flow;
 }
 
 /* Animations */
@@ -177,19 +191,6 @@ h6 {
   }
 }
 
-.gradient-flow {
-  background: linear-gradient(120deg,
-      var(--secondary),
-      var(--tertiary),
-      var(--primary),
-      var(--secondary));
-  background-size: 800% 800%;
-  animation: gradient-flow 18s linear infinite;
-
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
 
 /* Font utils */
 .font-regular {

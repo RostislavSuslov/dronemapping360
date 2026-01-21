@@ -146,6 +146,12 @@ h6 {
   font-size: 18px;
 }
 
+/* images */
+img {
+  height: auto;
+  max-width: 100%;
+}
+
 /* Layout */
 .container {
   max-width: 1440px;
@@ -383,7 +389,6 @@ h6 {
   }
 }
 
-
 .template-arrow {
   width: 48px;
   height: 25px;
@@ -391,9 +396,7 @@ h6 {
   stroke-linecap: square;
   stroke: currentColor;
 
-  position: absolute;
-  bottom: 6px;
-  right: 0;
+ 
 
   &__line {
     transform: translateX(-17px);

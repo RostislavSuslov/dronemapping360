@@ -4,21 +4,25 @@
     --tertiary: #bbbbfd;
     --black: #2e2d2c;
     --dark-gray: #616161;
-    --light-gray: #A3A3A3;
-    --white: #F9F9F9;
-    --error: #A92727;
+    --light-gray: #a3a3a3;
+    --white: #f9f9f9;
+    --error: #a92727;
     --typefaces: "Arial";
     --line-height: 1.2;
     --letter-spacing: 0.02em;
-
+    --icon-offset: 64px;
     --section-padidng: 60px 0 100px;
     --template-title: 92px;
+    --card-title-size: 32px;
+    --card-image-gap: 40px;
 }
 
 @media only screen and (max-width: 991.98px) {
     :root {
         --section-padidng: 50px 0 90px;
         --template-title: 48px;
+        --card-title-size: 28px;
+        --card-image-gap: 30px;
     }
 }
 
@@ -26,5 +30,7 @@
     :root {
         --section-padidng: 40px 0 80px;
         --template-title: 36px;
+        --card-title-size: 20px;
+        --card-image-gap: 20px;
     }
 }

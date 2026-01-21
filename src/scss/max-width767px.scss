@@ -34,17 +34,32 @@
 
       &-image {
         height: 122px;
-        margin-bottom: 20px;
       }
 
       &-title {
-        font-size: 20px;
         margin-bottom: 16px;
       }
 
       &-text {
-         font-size: 12px;
+        font-size: 12px;
       }
+    }
+
+  }
+
+
+  .works {
+    &__list {
+      grid-template-columns: 1fr;
+      row-gap: 40px;
+    }
+
+    &__item-image {
+      aspect-ratio: 1 / 0.9;
+    }
+
+    .works__template-arrow {
+      bottom: -1px;
     }
   }
 }

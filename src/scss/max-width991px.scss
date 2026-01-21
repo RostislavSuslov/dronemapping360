@@ -64,15 +64,10 @@
       grid-row-gap: 50px;
     }
 
-    .services__item {
+    &__item {
       width: 100%;
 
-      &-image {
-        margin-bottom: 30px;
-      }
-
       &-title {
-        font-size: 28px;
         margin-bottom: 18px;
       }
 

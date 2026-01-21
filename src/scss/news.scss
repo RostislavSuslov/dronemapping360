@@ -1,0 +1,67 @@
+@use './variables' as *;
+
+.news {
+    padding: var(--section-padidng);
+
+    &__title-container {
+        display: flex;
+        justify-content: space-between;
+        column-gap: 40px;
+    }
+
+    &__template-title {
+        flex: 1 0 730px;
+    }
+
+    &__link-action {
+        flex: 0 1 587px;
+    }
+
+    &__list {
+        &--grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    &__item {
+        --padding: 20px;
+        padding: var(--padding);
+        transition: color 0.1s ease, background-color 0.1s ease;
+        text-decoration: none;
+        display: flex;
+        flex-direction: column;
+        row-gap: 24px;
+        position: relative;
+        @include arrow-hover;
+        
+        &:hover {
+            color: var(--white);
+            background-color: var(--primary);
+        }
+        
+        &--grid-item {
+            min-height: 233px;
+
+        }
+
+        &-meta {
+            font-size: 10px;
+            margin-bottom: auto;
+        }
+
+        &-title {
+            font-size: var(--card-title-size);
+            padding-right: calc(var(--icon-offset) + var(--padding) * 2);
+            margin: 0;
+            text-transform: uppercase;
+        }
+
+    }
+
+    &__template-arrow {
+        position: absolute;
+        right: 48px;
+        bottom: 24px;
+    }
+}

@@ -4,6 +4,9 @@
 @use './scss/hero' as *;
 @use './scss/services' as *;
 @use './scss/selected-works' as *;
+@use './scss/news' as *;
+
+@use './scss/min-width1200px' as *;
 @use './scss/max-width1199px' as *;
 @use './scss/max-width991px' as *;
 @use './scss/max-width767px' as *;

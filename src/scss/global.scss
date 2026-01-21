@@ -396,13 +396,34 @@ img {
   stroke-linecap: square;
   stroke: currentColor;
 
- 
+
 
   &__line {
     transform: translateX(-17px);
     transition: transform 0.2s ease;
   }
 }
+
+
+.link-action {
+  min-width: 162px;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  column-gap: 40px;
+  text-decoration: none;
+
+  @include arrow-hover;
+
+  &__text {
+    max-width: 80px;
+    &--lg {
+      max-width: 180px;
+      margin-right: auto;
+    }
+  }
+}
+
 
 .body--overflow-hidden {
   overflow-y: hidden;

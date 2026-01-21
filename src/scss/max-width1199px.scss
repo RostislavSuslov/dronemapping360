@@ -24,8 +24,50 @@
     right: 20px;
   }
 
-  .works__link {
+  .works__link-action {
     position: static;
+  }
+
+  .link-action {
     margin-bottom: 40px;
+  }
+
+  .news {
+    &__title-container {
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    &__template-title,
+    &__link-action {
+      flex: 0 0 auto;
+    }
+
+    &__link-action {
+      max-width: 587px;
+    }
+  }
+
+  .news {
+
+    &__list {
+      &--grid {
+        display: block;
+      }
+    }
+
+    &__item {
+      padding-left: 0;
+      padding-right: 0;
+
+      &:hover {
+        color: var(--primary);
+        background-color: var(--white);
+      }
+
+      &--grid-item {
+        min-height: auto;
+      }
+    }
   }
 }

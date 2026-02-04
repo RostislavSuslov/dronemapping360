@@ -1,0 +1,47 @@
+@use './variables' as *;
+
+@media only screen and (min-width: 992px) {
+    .footer {
+        &__container {
+            display: grid;
+            grid-template-columns: 263px 1fr;
+            grid-column-gap: 120px;
+            grid-row-gap: 31px;
+            padding-top: 50px;
+        }
+
+        &__logo {
+            width: 263px;
+            grid-area: 1 / 1 / 2 / 2;
+            margin-bottom: 0;
+        }
+
+        &__group {
+            gap: 50px;
+            max-width: 643px;
+            grid-area: 1 / 2 / 2 / 3;
+            grid-template-columns: auto auto;
+        }
+
+        &__nav {
+            margin-bottom: 0;
+
+            &-title {
+                font-size: 16px;
+            }
+
+            &-link {
+                font-size: 16px;
+            }
+        }
+
+        .footer__nav-column {
+            min-height: 274px;
+        }
+
+        &__copyright {
+            grid-area: 2 / 1 / 3 / 3;
+            padding: 18px 0;
+        }
+    }
+}

@@ -182,8 +182,10 @@ img {
 /* Layout */
 .container {
   max-width: 1440px;
-  padding: 0 20px;
-  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Template title */

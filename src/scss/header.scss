@@ -86,9 +86,9 @@
   }
 
   &__burger {
-    --size: 35px;
-    width: var(--size);
-    height: var(--size);
+
+    width: var(--icon-size);
+    height: var(--icon-size);
     display: none;
     margin-left: auto;
     margin-right: 40px;
@@ -98,8 +98,8 @@
     background-color: var(--white);
 
     svg {
-      width: var(--size);
-      height: var(--size);
+      width: var(--icon-size);
+      height: var(--icon-size);
     }
 
     &:hover,

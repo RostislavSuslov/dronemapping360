@@ -99,9 +99,15 @@ window.addEventListener('load', () => {
       const path = wrapper.querySelector(".input-box__line");
 
       let progress = 0;
-      let x = 0.5;
+      let x = 1;
       let time = Math.PI / 2;
       let reqId = null;
+
+      const queryTextarea = () => {
+        if (wrapper.querySelector('textarea')) {
+          wrapper.classList.add('input-box__input-wrapper--has-textarea')
+        }
+      }
 
       const setPath = (progress) => {
         const width = svg.clientWidth;
@@ -110,14 +116,20 @@ window.addEventListener('load', () => {
 
       const lerp = (a, b, t) => a * (1 - t) + b * t;
 
-      wrapper.addEventListener("mousemove", e => {
+      wrapper.addEventListener("mouseenter", e => {
         const rect = svg.getBoundingClientRect();
         x = (e.clientX - rect.left) / rect.width;
-        progress = (e.clientY - rect.top - rect.height / 2) * 0.5;
+
+        if (wrapper.closest('.input-box__input-wrapper--has-textarea')) {
+          progress = (e.clientY - rect.top - rect.height / 2) * 0.2;
+        } else {
+          progress = (e.clientY - rect.top - rect.height / 2) * 0.5;
+        }
+
         setPath(progress);
       });
 
-      wrapper.addEventListener("mouseleave", () => {
+      wrapper.addEventListener("mouseout", () => {
         const animateOut = () => {
           const newProgress = progress * Math.sin(time);
           progress = lerp(progress, 0, 0.05);
@@ -134,11 +146,12 @@ window.addEventListener('load', () => {
         animateOut();
       });
 
+      queryTextarea()
       setPath(0);
     });
   }
 
- 
+
 
   headerHoverLine()
   burgerMenu()

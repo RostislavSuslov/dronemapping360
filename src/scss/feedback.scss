@@ -1,0 +1,15 @@
+.feedback {
+    padding: var( --section-padidng);
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        gap: 60px;
+    }
+
+    &__subtitle {
+        font-size: 16px;
+        max-width: 239px;
+        text-transform: uppercase;
+    }
+}
+

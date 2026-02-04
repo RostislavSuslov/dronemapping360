@@ -5,8 +5,11 @@
 @use './scss/services' as *;
 @use './scss/selected-works' as *;
 @use './scss/news' as *;
-
+@use './scss/feedback' as *;
+@use './scss/footer' as *;
+@use './scss/min-width576px' as *;
 @use './scss/min-width1200px' as *;
 @use './scss/max-width1199px' as *;
 @use './scss/max-width991px' as *;
 @use './scss/max-width767px' as *;
+@use './scss/max-width575px' as *;

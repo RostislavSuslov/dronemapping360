@@ -1,0 +1,10 @@
+@use './variables' as *;
+
+@media only screen and (max-width: 575.98px) {
+    .template-form {
+
+        &__submit {
+            width: 100%;
+        }
+    }
+}

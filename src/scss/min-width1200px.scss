@@ -1,12 +1,25 @@
 @use './variables' as *;
 
-@media only screen and (min: 1200px) {
+@media only screen and (min-width: 1200px) {
     .news {
         &__item {
             &:hover {
                 background-color: var(--primary);
                 color: var(--white)
             }
+        }
+    }
+
+
+
+    .feedback {
+        
+        .feedback__title-container {
+            flex: 1 0 620px;
+        }
+
+        &__template-form {
+            flex: 0 1 625px;
         }
     }
 }

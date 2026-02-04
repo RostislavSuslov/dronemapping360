@@ -13,7 +13,8 @@
 
 /* Base */
 body,
-input {
+input,
+textarea {
   font-family: var(--typefaces);
   color: var(--black);
   background-color: var(--white);
@@ -24,12 +25,38 @@ input {
   overflow-wrap: break-word;
 }
 
-input {
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
+input,
+textarea {
   text-transform: uppercase;
   font-weight: 900;
+  text-wrap: auto;
 
   &:focus {
     outline: none;
+  }
+}
+
+textarea {
+  min-width: 100%;
+  max-width: 100%;
+  max-height: 290px;
+  min-height: 19px;
+  height: 19px;
+  transition: height 1s ease;
+
+  &:focus {
+    height: 120px;
   }
 }
 
@@ -303,10 +330,18 @@ img {
   }
 }
 
+
+.template-form {
+  width: 100%;
+  position: relative;
+  max-width: 625px;
+}
+
 /* Input box */
 .input-box {
   display: flex;
   justify-content: flex-end;
+  min-height: 24px;
   gap: 20px;
   text-align: right;
   margin-bottom: 20px;
@@ -320,8 +355,9 @@ img {
     }
 
     label {
+      --size: 24px;
       font-weight: 900;
-      line-height: 120%;
+      line-height: var(--size);
       letter-spacing: 0.02em;
       text-transform: uppercase;
       cursor: pointer;
@@ -330,12 +366,12 @@ img {
 
       &::before {
         content: "";
-        width: 25px;
-        height: 25px;
+        width: var(--size);
+        height: var(--size);
         border: 3px solid var(--black);
         background-color: var(--white);
         position: absolute;
-        top: -3px;
+        top: 0;
         left: 0;
         transition: background-color 0.3s ease-in-out;
       }
@@ -348,6 +384,10 @@ img {
     input:checked+label::before {
       background-color: var(--primary);
     }
+  }
+
+  &:last-of-type {
+    margin-bottom: 60px;
   }
 
   &__label {
@@ -389,6 +429,17 @@ img {
   }
 }
 
+.checkbox-group {
+
+  &__legend {
+    font-size: 16px;
+    font-weight: 900;
+    margin-bottom: 40px;
+  }
+
+
+}
+
 .template-arrow {
   width: 48px;
   height: 25px;
@@ -417,6 +468,7 @@ img {
 
   &__text {
     max-width: 80px;
+
     &--lg {
       max-width: 180px;
       margin-right: auto;
@@ -424,6 +476,9 @@ img {
   }
 }
 
+.svg-sprite {
+  display: none;
+}
 
 .body--overflow-hidden {
   overflow-y: hidden;

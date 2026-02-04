@@ -76,4 +76,28 @@
       }
     }
   }
+
+  .feedback__container {
+    gap: 40px;
+  }
+
+  .input-box {
+    &:last-of-type {
+      margin-bottom: 40px;
+    }
+
+    &--checkbox {
+      font-size: 10px;
+
+      label {
+        padding-left: 55px;
+      }
+    }
+  }
+
+  .checkbox-group {
+    &__legend {
+      font-size: 12px;
+    }
+  }
 }

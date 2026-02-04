@@ -34,12 +34,12 @@
         row-gap: 24px;
         position: relative;
         @include arrow-hover;
-        
+
         &:hover {
-            color: var(--white);
-            background-color: var(--primary);
+            color: var(--primary);
+            background-color: var(--white);
         }
-        
+
         &--grid-item {
             min-height: 233px;
 

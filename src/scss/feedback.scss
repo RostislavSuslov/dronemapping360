@@ -1,9 +1,14 @@
 .feedback {
     padding: var( --section-padidng);
+    padding-bottom: 38px;
     &__container {
         display: flex;
         justify-content: space-between;
         gap: 60px;
+    }
+    
+    &__template-title {
+        margin-bottom: 40px;
     }
 
     &__subtitle {

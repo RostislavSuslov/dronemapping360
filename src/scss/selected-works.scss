@@ -8,11 +8,14 @@
         position: relative;
     }
 
+    &__title {
+        margin-bottom: 60px;
+    }
 
     &__link-action {
         position: absolute;
-        right: 20px;
-        top: 44px;
+        right: 15px;
+        top: 56px;
     }
 
     &__list {
@@ -28,15 +31,20 @@
         position: relative;
         @include arrow-hover;
 
-        &-image {
+        &-picture {
+            display: flex;
             margin-bottom: var(--card-image-gap);
-            aspect-ratio: 1 / 1.23;
+        }
+
+        &-image {
+            aspect-ratio: 1 / 1.231;
             object-fit: cover;
             width: 100%;
         }
 
         &-title {
             font-size: var(--card-title-size);
+            letter-spacing: 0px;
             max-width: 405px;
             margin: auto 0 0 0;
             padding-right: var(--icon-offset);

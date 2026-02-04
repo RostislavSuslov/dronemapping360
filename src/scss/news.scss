@@ -11,10 +11,12 @@
 
     &__template-title {
         flex: 1 0 730px;
+        margin-bottom: 60px;
     }
 
     &__link-action {
         flex: 0 1 587px;
+        padding: 0 0 24px 0;
     }
 
     &__list {
@@ -46,6 +48,7 @@
         }
 
         &-meta {
+            letter-spacing: 0;
             font-size: 10px;
             margin-bottom: auto;
         }
@@ -54,6 +57,7 @@
             font-size: var(--card-title-size);
             padding-right: calc(var(--icon-offset) + var(--padding) * 2);
             margin: 0;
+            letter-spacing: 0;
             text-transform: uppercase;
         }
 

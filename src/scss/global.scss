@@ -345,9 +345,9 @@ img {
   display: flex;
   justify-content: flex-end;
   min-height: 24px;
-  gap: 23px;
+  gap: 20px;
   text-align: right;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
 
   &--checkbox {
     position: relative;
@@ -376,7 +376,7 @@ img {
         background-color: var(--white);
         position: absolute;
         top: 3px;
-        left: -2px;
+        left: -3px;
         transition: background-color 0.3s ease-in-out;
       }
 
@@ -439,12 +439,10 @@ img {
     font-size: 16px;
     line-height: 1.4;
     font-weight: 900;
-    margin-bottom: 33px;
+    margin-bottom: 40px;
     text-transform: uppercase;
     max-width: 240px;
   }
-
-
 }
 
 .template-arrow {
@@ -472,7 +470,7 @@ img {
   @include arrow-hover;
 
   &__text {
-    max-width: 77px;
+    max-width: 80px;
 
     &--lg {
       max-width: 180px;

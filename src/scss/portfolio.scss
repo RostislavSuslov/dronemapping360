@@ -1,0 +1,10 @@
+@use './variables' as *;
+
+.portfolio {
+    padding: var(--section-padidng);
+    &__grid {
+        display: grid;
+        gap: 20px;
+        grid-template-columns: 1fr 1f 1fr;
+    }
+}

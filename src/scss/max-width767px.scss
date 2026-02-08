@@ -28,28 +28,26 @@
     &__subtitle {
       font-size: 12px;
     }
-
-    .services__item {
-      width: 100%;
-
-      &-image {
-        height: 122px;
-      }
-
-      &-title {
-        margin-bottom: 18px;
-      }
-
-      &-text {
-        font-size: 12px;
-        line-height: 1.24;
-      }
-    }
-
+    
     &__template-arrow {
       position: absolute;
       bottom: 2px;
       right: -5px;
+    }
+  }
+
+  .card {
+    width: 100%;
+
+    &__image {
+      height: 122px;
+    }
+
+  
+
+    &__text {
+      font-size: 12px;
+      line-height: 1.24;
     }
   }
 
@@ -67,5 +65,9 @@
       bottom: -1px;
       right: -5px;
     }
+  }
+
+  .pagination__list {
+    column-gap: 9px;
   }
 }

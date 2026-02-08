@@ -84,17 +84,15 @@
     &__container {
       grid-row-gap: 50px;
     }
+  }
 
-    &__item {
-      width: 100%;
+  .card {
+    &__title {
+      margin-bottom: 18px;
+    }
 
-      &-title {
-        margin-bottom: 18px;
-      }
-
-      &-text {
-        font-size: 14px;
-      }
+    &__text {
+      font-size: 14px;
     }
   }
 
@@ -188,5 +186,7 @@
     }
   }
 
- 
+  .portfolio__grid {
+    row-gap: 40px;
+  }
 }

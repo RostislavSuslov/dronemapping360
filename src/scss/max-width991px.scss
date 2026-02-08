@@ -46,6 +46,11 @@
   .template-title {
     font-size: 32px;
     letter-spacing: 0;
+
+    &--lg {
+      font-size: 128px;
+      margin-bottom: 40px;
+    }
   }
 
   .works__title {
@@ -184,5 +189,22 @@
 
   .portfolio__grid {
     row-gap: 40px;
+  }
+
+  .page-404 {
+    &__subtitle {
+      font-size: 20px;
+    }
+
+    &__subtitle,
+    &__description,
+    &__link {
+      margin-bottom: 20px;
+    }
+
+    &__description,
+    &__link {
+      font-size: 12px;
+    }
   }
 }

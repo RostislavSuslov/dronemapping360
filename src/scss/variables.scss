@@ -1,3 +1,16 @@
+@mixin container {
+  max-width: 1440px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media only screen and (max-width: 991.98px) {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
 @mixin gradient-flow {
   background: linear-gradient(120deg,
       var(--secondary),

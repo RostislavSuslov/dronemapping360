@@ -1,0 +1,25 @@
+@use './variables' as *;
+
+
+.feedback--row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    @include container;
+}
+
+.feedback__container--column {
+    flex-direction: column;
+    margin-bottom: -60px;
+    max-width: 625px;
+}
+
+
+
+
+.feedback__map {
+    width: 100%;
+    max-width: 632px;
+    height: 100%;
+    margin-left: auto;
+}

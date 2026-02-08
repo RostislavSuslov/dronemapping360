@@ -25,6 +25,12 @@ textarea {
   overflow-wrap: break-word;
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 input[type="number"] {
   -moz-appearance: textfield;
   appearance: textfield;
@@ -181,11 +187,7 @@ img {
 
 /* Layout */
 .container {
-  max-width: 1440px;
-  padding-left: 20px;
-  padding-right: 20px;
-  margin-left: auto;
-  margin-right: auto;
+  @include container;
 }
 
 /* Template title */

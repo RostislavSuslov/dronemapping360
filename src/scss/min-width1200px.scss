@@ -13,13 +13,21 @@
 
 
     .feedback {
-        
-        .feedback__title-container {
+
+        &__title-container {
             flex: 1 0 620px;
+        }
+
+        &__title-container--basis-auto {
+            flex-basis: auto;
         }
 
         &__template-form {
             flex: 0 1 625px;
+        }
+
+        &__template-form--basis-auto {
+            flex-basis: auto;
         }
     }
 }

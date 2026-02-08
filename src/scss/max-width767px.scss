@@ -28,7 +28,7 @@
     &__subtitle {
       font-size: 12px;
     }
-    
+
     &__template-arrow {
       position: absolute;
       bottom: 2px;
@@ -43,7 +43,7 @@
       height: 122px;
     }
 
-  
+
 
     &__text {
       font-size: 12px;
@@ -69,5 +69,17 @@
 
   .pagination__list {
     column-gap: 9px;
+  }
+
+  .feedback--row {
+    display: flex;
+    flex-direction: column-reverse;
+    row-gap: 40px;
+    padding-bottom: 120px;
+  }
+
+  .feedback__map {
+    margin: 0;
+    aspect-ratio: 1 / 1;
   }
 }

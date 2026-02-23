@@ -1,5 +1,7 @@
 .feedback {
     padding: var( --section-padidng);
+    scroll-margin-top:  var( --template-title);
+    
     &__container {
         display: flex;
         justify-content: space-between;

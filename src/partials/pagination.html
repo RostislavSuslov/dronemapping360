@@ -1,31 +1,17 @@
-<nav class="pagination" aria-label="Blog pagination">
-    <ul class="pagination__list">
-        <li class="pagination__item pagination__item--prev">
-            <a href="/blog/page/1/" class="pagination__link">
-                <svg class="template-arrow" viewBox="0 0 48 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path class="template-arrow__line"
-                        d="M45.5 12.0001L-0.00010339 12M45.5 12.0001L36.5141 21.0001M45.5 12.0001L36.5141 3.00012">
-                    </path>
-                </svg>
-            </a>
-        </li>
-        <li class="pagination__item">
-            <a href="/blog/" class="pagination__link">1</a>
-        </li>
-        <li class="pagination__item pagination__item--current">
-            <span class="pagination__link">2</span>
-        </li>
-        <li class="pagination__item">
-            <a href="/blog/page/3/" class="pagination__link">3</a>
-        </li>
-        <li class="pagination__item pagination__item--next">
-            <a href="/blog/page/3/" class="pagination__link">
-                <svg class="template-arrow" viewBox="0 0 48 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path class="template-arrow__line"
-                        d="M45.5 12.0001L-0.00010339 12M45.5 12.0001L36.5141 21.0001M45.5 12.0001L36.5141 3.00012">
-                    </path>
-                </svg>
-            </a>
-        </li>
-    </ul>
+<nav class="navigation pagination" aria-label="Пагинация записей">
+    <div class="nav-links">
+        <a class="prev page-numbers" href="https://dronemapping360.com/services/"><svg
+                class="template-arrow" viewBox="0 0 48 25">
+                <path class="template-arrow__line" d="M45.5 12H0M45.5 12L36.5141 21M45.5 12L36.5141 3"></path>
+            </svg>
+        </a>
+        <a class="page-numbers" href="https://dronemapping360.com/services/">1</a>
+        <span aria-current="page" class="page-numbers current">2</span>
+        <a class="page-numbers" href="https://dronemapping360.com/services/page/3/">3</a>
+        <a class="next page-numbers" href="https://dronemapping360.com/services/page/3/">
+            <svg class="template-arrow" viewBox="0 0 48 25">
+                <path class="template-arrow__line" d="M45.5 12H0M45.5 12L36.5141 21M45.5 12L36.5141 3"></path>
+            </svg>
+        </a>
+    </div>
 </nav>

@@ -6,7 +6,7 @@ import { gsap } from "gsap";
 window.addEventListener('load', () => {
   const headerHoverLine = () => {
     const list = document.querySelector('.header__list');
-    if (!list) return;  
+    if (!list) return;
 
     const links = document.querySelectorAll('.header__link');
     let activeLink = document.querySelector('.header__link--active');
@@ -16,7 +16,7 @@ window.addEventListener('load', () => {
     }
 
     function moveLine(target) {
-      if (!target) return;  
+      if (!target) return;
 
       const rect = target.getBoundingClientRect();
       const listRect = list.getBoundingClientRect();
@@ -156,11 +156,34 @@ window.addEventListener('load', () => {
     });
   }
 
+  const cf7LiveValidationStyling = () => {
+    const inputs = document.querySelectorAll('.wpcf7-form-control');
 
+    if (!inputs.length) return;
+
+    inputs.forEach(input => {
+      const box = input.closest('.input-box');
+      if (!box) return;
+
+      const observer = new MutationObserver(() => {
+        if (input.classList.contains('wpcf7-not-valid')) {
+          box.classList.add('has-error');
+        } else {
+          box.classList.remove('has-error');
+        }
+      });
+
+      observer.observe(input, {
+        attributes: true,
+        attributeFilter: ['class']
+      });
+    });
+  };
 
   headerHoverLine()
   burgerMenu()
   stickyHeader()
   magneticElements()
   inputsHover()
+  cf7LiveValidationStyling()
 })

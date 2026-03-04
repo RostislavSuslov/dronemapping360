@@ -89,6 +89,7 @@ input:checked+span::before {
     position: absolute;
     top: calc(100% + 14px);
     left: 0;
+    right: 0;
     margin: 0;
     font-size: 14px;
     font-weight: 900;
@@ -111,6 +112,11 @@ input:checked+span::before {
     text-align: left;
 }
 
+.wpcf7 form.sent .wpcf7-response-output {
+    border-color: #00ff17;
+}
+
+
 .input-box__input-wrapper {
 
     p,
@@ -118,5 +124,21 @@ input:checked+span::before {
     textarea,
     span {
         width: 100%;
+    }
+}
+
+.wpcf7-response-output:empty {
+    display: none;
+}
+
+.input-box {
+    &.has-error {
+        .input-box__label {
+            color: var(--error);
+        }
+
+        .input-box__line {
+            stroke: var(--error);
+        }
     }
 }

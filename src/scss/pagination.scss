@@ -2,6 +2,8 @@
 
 .pagination {
     padding: var(--section-padidng);
+    display: flex;
+    justify-content: end;
     @include container;
 
     .nav-links {

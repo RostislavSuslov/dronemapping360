@@ -147,7 +147,7 @@
 
     &__svg {
       position: absolute;
-      bottom: -9px;
+      bottom: -17px;
     }
 
     &__label {
@@ -185,6 +185,14 @@
       letter-spacing: 0;
       margin-bottom: 36px;
     }
+  }
+
+  .wpcf7-list-item-label {
+    padding: 4px 0 4px 50px;
+  }
+
+  .wpcf7-not-valid-tip {
+    bottom: -19px;
   }
 
   .portfolio__grid {

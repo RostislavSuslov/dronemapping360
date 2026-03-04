@@ -1,0 +1,122 @@
+.wpcf7-form {
+    width: 100%;
+    position: relative;
+    max-width: 625px;
+
+    p {
+        margin: 0;
+    }
+}
+
+.wpcf7-checkbox {
+    display: grid;
+    row-gap: 12px;
+
+    [type="checkbox"] {
+        display: none;
+    }
+
+    .wpcf7-list-item {
+        margin-left: 0;
+    }
+}
+
+.wpcf7-list-item-label {
+    --size: 24px;
+    font-weight: 900;
+    line-height: var(--size);
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    cursor: pointer;
+    padding: 4px 0 4px 73px;
+    transition: color 0.3s ease-out;
+    position: relative;
+
+    &::before {
+        content: "";
+        width: var(--size);
+        height: var(--size);
+        border: 3px solid var(--black);
+        background-color: var(--white);
+        position: absolute;
+        top: 4px;
+        left: 0;
+        transition: background-color 0.3s ease-in-out;
+    }
+
+    &:hover {
+        color: var(--primary);
+    }
+}
+
+input:checked+span::before {
+    background-color: var(--primary);
+}
+
+
+.wpcf7-spinner {
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90px;
+    height: 90px;
+
+    &::before {
+        content: '';
+        position: absolute;
+        background-color: #fbfbfc;
+        border: 5px solid;
+        top: 25px;
+        left: 15px;
+        width: 20px;
+        height: 40px;
+        border: none;
+        border-radius: 100%;
+        transform-origin: 30px;
+        animation-name: spin;
+        animation-duration: 400ms;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+    }
+}
+
+
+.wpcf7 form .wpcf7-response-output {
+    padding: 12px;
+    border: 2px solid var(--primary);
+    position: absolute;
+    top: calc(100% + 14px);
+    left: 0;
+    margin: 0;
+    font-size: 14px;
+    font-weight: 900;
+    line-height: 1.4;
+    text-transform: uppercase;
+}
+
+.wpcf7 form.failed .wpcf7-response-output,
+.wpcf7 form.aborted .wpcf7-response-output {
+    border-color: var(--error);
+    color: var(--error);
+}
+
+.wpcf7-not-valid-tip {
+    color: var(--error);
+    font-weight: 900;
+    position: absolute;
+    bottom: -22px;
+    font-size: 10px;
+    text-align: left;
+}
+
+.input-box__input-wrapper {
+
+    p,
+    span,
+    textarea,
+    span {
+        width: 100%;
+    }
+}

@@ -2,7 +2,7 @@
     <div class="container feedback__container">
         <div class="feedback__title-container">
             <h2 class="template-title feedback__template-title">let`s talk</h2>
-            <h3 class="feedback__subtitle">Lorem ipsum dolor sit amet consectetur.</h3>
+            <h3 class="feedback__subtitle">We're waiting for your message!</h3>
         </div>
         <form class="template-form feedback__template-form">
             <div class="input-box">
@@ -55,15 +55,25 @@
                 </div>
             </div>
             <fieldset class="checkbox-group">
-                <legend class="checkbox-group__legend">Lorem ipsum dolor sit amet consectetur.</legend>
-                <div class="input-box input-box--checkbox">
-                    <input type="checkbox" id="collaboration" name="feedback">
-                    <label for="collaboration">COLLABORATION</label>
-                </div>
-                <div class="input-box input-box--checkbox">
-                    <input type="checkbox" id="order" name="feedback">
-                    <label for="order">ORDER A PROJECT</label>
-                </div>
+                <legend class="checkbox-group__legend">Test and Iterate</legend>
+                <p>
+                    <span class="wpcf7-form-control-wrap" data-name="order-and-collaboration">
+                        <span class="wpcf7-form-control wpcf7-checkbox">
+                            <span class="wpcf7-list-item first">
+                                <label>
+                                    <input type="checkbox" name="order-and-collaboration[]" value="ORDER A PROJECT">
+                                    <span class="wpcf7-list-item-label">ORDER A PROJECT</span>
+                                </label>
+                            </span>
+                            <span class="wpcf7-list-item last">
+                                <label>
+                                    <input type="checkbox" name="order-and-collaboration[]" value="COLLABORATION">
+                                    <span class="wpcf7-list-item-label">COLLABORATION</span>
+                                </label>
+                            </span>
+                        </span>
+                    </span>
+                </p>
             </fieldset>
             <button class="btn btn--primary template-form__submit" type="submit" data-magnetic><span>send</span></button>
         </form>

@@ -61,7 +61,7 @@ textarea {
   max-height: 290px;
   min-height: 19px;
   height: 19px;
-  transition: height 1s ease;
+  transition: height 0.1s ease;
 
   &:focus {
     height: 120px;

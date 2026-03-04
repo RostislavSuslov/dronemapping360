@@ -6,10 +6,18 @@ import { gsap } from "gsap";
 window.addEventListener('load', () => {
   const headerHoverLine = () => {
     const list = document.querySelector('.header__list');
+    if (!list) return;  
+
     const links = document.querySelectorAll('.header__link');
     let activeLink = document.querySelector('.header__link--active');
 
+    if (!activeLink && links.length > 0) {
+      activeLink = links[0];
+    }
+
     function moveLine(target) {
+      if (!target) return;  
+
       const rect = target.getBoundingClientRect();
       const listRect = list.getBoundingClientRect();
 
@@ -18,16 +26,14 @@ window.addEventListener('load', () => {
     }
 
     links.forEach(link => {
-      link.addEventListener('mouseenter', () => {
-        moveLine(link);
-      });
+      link.addEventListener('mouseenter', () => moveLine(link));
     });
 
     list.addEventListener('mouseleave', () => {
-      moveLine(activeLink);
+      if (activeLink) moveLine(activeLink);
     });
 
-    moveLine(activeLink);
+    if (activeLink) moveLine(activeLink);
   }
 
   const burgerMenu = () => {
@@ -91,7 +97,6 @@ window.addEventListener('load', () => {
   }
 
   const inputsHover = () => {
-
     const inputWrappers = document.querySelectorAll(".input-box__input-wrapper");
 
     inputWrappers.forEach(wrapper => {

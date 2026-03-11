@@ -40,6 +40,19 @@
             text-transform: uppercase;
         }
 
+        &-list {
+            padding: 0;
+            margin: 0;
+        }
+
+        &-item {
+            padding: 0;
+
+            &:before {
+                display: none;
+            }
+        }
+
         &-link {
             width: max-content;
             max-width: 100%;

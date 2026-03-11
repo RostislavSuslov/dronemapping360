@@ -187,7 +187,18 @@ img {
   max-width: 100%;
 }
 
+
+iframe {
+    width: 100%;
+    height: 700px;
+}
+
 /* Layout */
+article {
+  overflow-wrap: break-word;
+  padding: var(--section-padidng)
+}
+
 .container {
   @include container;
 }

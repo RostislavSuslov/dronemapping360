@@ -2,6 +2,7 @@ import 'reset-css/reset.css';
 import './main.scss'
 import './style.css'
 import { gsap } from "gsap";
+import Inputmask from "inputmask";
 
 window.addEventListener('load', () => {
   const headerHoverLine = () => {
@@ -156,6 +157,14 @@ window.addEventListener('load', () => {
     });
   }
 
+  const phoneMask = () => {
+    const phoneInputs = document.querySelectorAll('input[type="tel"]');
+    phoneInputs.forEach(input => {
+      Inputmask({ mask: "+1 (999) 999-9999", placeholder: "_", showMaskOnHover: false })
+        .mask(input);
+    });
+  };
+
   const cf7LiveValidationStyling = () => {
     const inputs = document.querySelectorAll('.wpcf7-form-control');
 
@@ -179,6 +188,10 @@ window.addEventListener('load', () => {
       });
     });
   };
+
+  document.addEventListener('wpcf7submit', () => {
+    phoneMask();
+  });
 
   const cursorAnimation = () => {
     const cursor = document.querySelector(".cursor");
@@ -209,11 +222,15 @@ window.addEventListener('load', () => {
     });
   }
 
+
+
+
   headerHoverLine()
   burgerMenu()
   stickyHeader()
   magneticElements()
   inputsHover()
+  phoneMask()
   cf7LiveValidationStyling()
   cursorAnimation()
 })

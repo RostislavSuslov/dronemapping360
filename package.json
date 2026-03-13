@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "gsap": "^3.14.2",
+    "inputmask": "^5.0.9",
     "reset-css": "^5.0.2",
     "vite-plugin-full-reload": "^1.2.0",
     "vite-plugin-handlebars": "^2.0.0"

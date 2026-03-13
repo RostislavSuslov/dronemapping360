@@ -22,7 +22,7 @@
     :root {
         --section-padidng: 50px 0 90px;
         --template-title: 48px;
-        --card-title-size: 28px;
+        --card-title-size: 24px;
         --card-image-gap: 30px;
     }
 }

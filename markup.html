@@ -1,16 +1,9 @@
 <!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>dronemapping360 - markup</title>
+   {{> head}}
     <style>
       .markup{ display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px;} .markup__item{ padding: 48px 24px; border: 1px solid var(--light-gray); border-radius: 4px;} .markup__item-title{ font-size: 24px; margin-bottom: 18px; text-transform: uppercase; font-weight: 700;} .colors{ display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;} .colors__item{ padding: 12px; border: 1px solid var(--dark-gray); border-radius: 4px; background-color: var(--white);} .colors__item:hover{ z-index: 1;} .colors__preview{ height: 100px; margin-bottom: 18px; border-radius: 4px;} .colors__name{ font-size: 18px; font-weight: 600; margin-bottom: 6px;} .colors__hex{ font-size: 14px; font-weight: 600;}
     </style>
-</head>
-
 <body>
     {{> header}}
     <div class="container markup">

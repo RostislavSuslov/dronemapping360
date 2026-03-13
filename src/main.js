@@ -180,10 +180,40 @@ window.addEventListener('load', () => {
     });
   };
 
+  const cursorAnimation = () => {
+    const cursor = document.querySelector(".cursor");
+    let endX = window.innerWidth / 2;
+    let endY = window.innerHeight / 2;
+    let x = endX;
+    let y = endY;
+    const delay = 8;
+    document.addEventListener("mousemove", (e) => { endX = e.clientX; endY = e.clientY; });
+    function animate() {
+      x += (endX - x) / delay; y += (endY - y) / delay; cursor.style.left = x + "px";
+      cursor.style.top = y + "px"; requestAnimationFrame(animate);
+    }
+    animate();
+    document.querySelectorAll("a, button, input").forEach(el => {
+      el.addEventListener("mouseenter", () => {
+        cursor.classList.add("hover");
+      });
+      el.addEventListener("mouseleave", () => {
+        cursor.classList.remove("hover");
+      });
+    });
+    document.addEventListener("mousedown", () => {
+      cursor.classList.add("click");
+    });
+    document.addEventListener("mouseup", () => {
+      cursor.classList.remove("click");
+    });
+  }
+
   headerHoverLine()
   burgerMenu()
   stickyHeader()
   magneticElements()
   inputsHover()
   cf7LiveValidationStyling()
+  cursorAnimation()
 })

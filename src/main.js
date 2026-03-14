@@ -10,11 +10,9 @@ window.addEventListener('load', () => {
     if (!list) return;
 
     const links = document.querySelectorAll('.header__link');
-    let activeLink = document.querySelector('.header__link--active');
+    const activeLink = document.querySelector('.header__link--active');
 
-    if (!activeLink && links.length > 0) {
-      activeLink = links[0];
-    }
+    let hideTimer = null;
 
     function moveLine(target) {
       if (!target) return;
@@ -24,18 +22,41 @@ window.addEventListener('load', () => {
 
       list.style.setProperty('--line-left', `${rect.left - listRect.left}px`);
       list.style.setProperty('--line-width', `${rect.width}px`);
+
+      list.classList.add('header__list--show-line');
+    }
+
+    function hideLine() {
+      list.classList.remove('header__list--show-line');
     }
 
     links.forEach(link => {
-      link.addEventListener('mouseenter', () => moveLine(link));
+      link.addEventListener('mouseenter', () => {
+
+        if (hideTimer) {
+          clearTimeout(hideTimer);
+        }
+
+        moveLine(link);
+      });
     });
 
     list.addEventListener('mouseleave', () => {
-      if (activeLink) moveLine(activeLink);
+
+      if (activeLink) {
+        moveLine(activeLink);
+      } else {
+        hideTimer = setTimeout(() => {
+          hideLine();
+        }, 2000);
+      }
+
     });
 
-    if (activeLink) moveLine(activeLink);
-  }
+    if (activeLink) {
+      moveLine(activeLink);
+    }
+  };
 
   const burgerMenu = () => {
     const burger = document.querySelector('.header__burger')

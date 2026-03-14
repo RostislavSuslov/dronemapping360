@@ -10,7 +10,7 @@
 }
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 /* Base */
@@ -136,6 +136,7 @@ ol {
 a {
   color: var(--black);
   text-decoration: underline;
+  transition: color 0.3s;
 
   &:hover {
     color: var(--primary);
@@ -189,8 +190,8 @@ img {
 
 
 iframe {
-    width: 100%;
-    height: 700px;
+  width: 100%;
+  height: 700px;
 }
 
 /* Layout */
@@ -209,6 +210,7 @@ article {
   font-size: var(--template-title);
   letter-spacing: 1.5px;
   text-transform: uppercase;
+  z-index: 30;
   @include gradient-flow;
 }
 
@@ -277,6 +279,7 @@ article {
   backface-visibility: hidden;
 
   transition: transform 0.3s ease;
+  z-index: 20;
 
   &:hover,
   &:focus {

@@ -45,6 +45,17 @@
     margin: 0;
     padding: 0;
     position: relative;
+
+    &:after {
+      content: "";
+      height: 3px;
+      position: absolute;
+      bottom: 6px;
+      left: calc(var(--line-left) + var(--link-padding));
+      width: calc(var(--line-width) - var(--link-padding)*2);
+      background: var(--primary);
+      transition: left 0.2s ease, width 0.3s ease;
+    }
   }
 
   &__item {
@@ -66,24 +77,6 @@
     text-decoration: none;
     padding: var(--link-padding);
     position: relative;
-
-    &:hover {
-      @include gradient-flow;
-    }
-  }
-
-  .header__list::after {
-    left: calc(var(--line-left) + var(--link-padding));
-    width: calc(var(--line-width) - var(--link-padding)*2);
-  }
-
-  .header__list::after {
-    content: "";
-    position: absolute;
-    height: 3px;
-    background: var(--primary);
-    transition: left 0.2s ease, width 0.3s ease;
-    bottom: 6px;
   }
 
   &__burger {

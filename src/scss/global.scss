@@ -210,7 +210,6 @@ article {
   font-size: var(--template-title);
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  z-index: 30;
   @include gradient-flow;
 }
 

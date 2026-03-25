@@ -1,11 +1,12 @@
 @use './variables' as *;
 
 .hero {
-  &__picture {
+  &__media {
     display: flex;
+    width: 100%;
   }
 
-  &__image {
+  &__media {
     aspect-ratio: 2.4;
     width: 100%;
     object-fit: cover;

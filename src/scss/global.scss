@@ -519,3 +519,10 @@ article {
   color: var(--white);
   background-color: var(--secondary);
 }
+
+
+@media (hover: none) and (pointer: coarse) {
+  .cursor {
+    display: none;
+  }
+}

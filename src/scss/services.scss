@@ -54,6 +54,7 @@
 
     &__title {
         font-size: var(--card-title-size);
+        padding-right: var(--icon-offset);
         line-height: 1;
         letter-spacing: 0;
         margin-bottom: 20px;
